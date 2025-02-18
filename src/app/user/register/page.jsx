@@ -20,8 +20,8 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const {data} = await axios.post("/api/register" , formData)
-    
+    const {data} = await axios.post("/api/user/register" , formData)
+    localStorage.setItem("token" , data.payload)
     setMessage(data.message);
   };
 

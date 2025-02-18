@@ -1,0 +1,4 @@
+{
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/user/task/getAll/page": "app/user/task/getAll/page.js"
+}
