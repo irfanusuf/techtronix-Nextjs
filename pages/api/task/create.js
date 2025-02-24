@@ -1,13 +1,16 @@
 import connectDb from "../../../config/connectDb";
-import { Task } from "../../../models/models";
+import { Task } from "../../../models/taskModel";
 import messagehandler from "../../../utils/messagehandler";
 
 export default async function create(req, res) {
   try {
-    await connectDb();
+
 
     if (req.method !== "POST")
       return messagehandler(res, 400, "Only POST Method is allowed");
+
+
+    await connectDb();
 
     const { title, description } = req.body;
 

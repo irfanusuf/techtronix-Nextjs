@@ -1,5 +1,5 @@
 import connectDb from "../../../config/connectDb";
-import { Task } from "../../../models/models";
+import { Task } from "../../../models/taskModel";
 import messagehandler from "../../../utils/messagehandler";
 
 export default async function getAll(req, res) {

@@ -1,5 +1,5 @@
 import connectDb from "../../../config/connectDb";
-import { User } from "../../../models/models";
+import { User } from "../../../models/userModel";
 import messagehandler from "../../../utils/messagehandler";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";

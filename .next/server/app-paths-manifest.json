@@ -1,4 +1,4 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/user/task/getAll/page": "app/user/task/getAll/page.js"
+  "/user/task/getAll/page": "app/user/task/getAll/page.js",
+  "/user/task/create/page": "app/user/task/create/page.js"
 }
