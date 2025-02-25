@@ -1,17 +1,23 @@
-import mongoose from "mongoose";
+import types from "next/types";
 
+const mongoose = require("mongoose");
 
+const taskSchema = mongoose.Schema(
+  {
+    title: { type: String },
+    description: { type: String },
+    userId : {type : mongoose.Schema.Types.ObjectId , ref : "User"},
+    status: {
+      type: String,
+      enum: ["pending", "inProgress", "completed", "deleted"],
+      default: "pending",
+    },
+    dueTime: { type: Date },
+  },
 
+  {
+    timestamps: true,
+  }
+);
 
-const taskSchema = mongoose.Schema({
-  title: { type: String },
-  description: { type: String },
-  status: { type: String },
-});
-
-
-// then exported them 
-
-// either export pre-compiled model or export new one 
-
-export const Task =  mongoose.models.Task   ||   mongoose.model("Task", taskSchema);
+export const Task = mongoose.models.Task || mongoose.model("Task", taskSchema);

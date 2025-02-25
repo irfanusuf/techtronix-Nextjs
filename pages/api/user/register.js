@@ -13,10 +13,9 @@ export default async function register(req, res) {
 
     const { username, email, password } = req.body;
 
-    if(username === "" || email === "" || password ===""){
-        messagehandler(res , 400  , "All credentials Required!")
+    if (username === "" || email === "" || password === "") {
+      messagehandler(res, 400, "All credentials Required!");
     }
-
 
     const findUser = await User.findOne({ email });
 
@@ -33,13 +32,19 @@ export default async function register(req, res) {
         password: passcrypt,
       });
 
-      const payload = newUser._id;
+      const userId = newUser._id;
 
       const secretKey = "heellothisisthessecretKey";
 
-      const token = await jwt.sign({ payload }, secretKey);
+      const token = jwt.sign({ userId }, secretKey);
 
-      return messagehandler(res, 200, "User created Succesfully!", token);
+      return messagehandler(
+        res,
+        200,
+        "User created Succesfully!",
+        token,
+        userId
+      );
     }
   } catch (error) {
     console.log(error);

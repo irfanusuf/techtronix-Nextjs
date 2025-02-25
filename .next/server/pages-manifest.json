@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/task/complete/[taskId]": "pages/api/task/complete/[taskId].js",
-  "/api/task/getAll": "pages/api/task/getAll.js",
-  "/api/task/delete/[taskId]": "pages/api/task/delete/[taskId].js"
+  "/api/task/getAll/[userId]": "pages/api/task/getAll/[userId].js",
+  "/api/user/login": "pages/api/user/login.js",
+  "/api/task/create/[userId]": "pages/api/task/create/[userId].js"
 }

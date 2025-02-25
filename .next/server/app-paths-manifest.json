@@ -1,4 +1,6 @@
 {
+  "/user/task/create/page": "app/user/task/create/page.js",
   "/user/task/getAll/page": "app/user/task/getAll/page.js",
-  "/user/task/create/page": "app/user/task/create/page.js"
+  "/user/login/page": "app/user/login/page.js",
+  "/user/register/page": "app/user/register/page.js"
 }

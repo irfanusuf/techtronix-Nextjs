@@ -1,0 +1,19 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/user/register/styles.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+.container {
+
+ display: flex;
+ flex-direction: column;
+ min-height: 90vh;
+ background-color: black;
+
+ color: aliceblue;
+ width: 60%;
+ margin: auto;
+ /* justify-content: center; */
+ align-items: center;
+
+
+
+}

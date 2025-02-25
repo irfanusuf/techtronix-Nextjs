@@ -21,6 +21,7 @@ const Login = () => {
     e.preventDefault();
     const {data} = await axios.post("/api/user/login" , formData)
     localStorage.setItem("authToken" , data.payload)
+    localStorage.setItem("userId" , data.userId)
     setMessage(data.message);
   };
 

@@ -22,11 +22,11 @@ export default async function login(req, res) {
       const verifyPass = await bcrypt.compare(password, user.password);
 
       if (verifyPass) {
-        const payload = user._id;
+        const userId = user._id;
         const secretKey = "heellothisisthessecretKey";
-        const token = jwt.sign({ payload }, secretKey);
+        const token = jwt.sign({ userId }, secretKey);
 
-        messagehandler(res, 200, "Logged in succesfully", token);
+        messagehandler(res, 200, "Logged in succesfully", token , userId );
       } else {
         messagehandler(res, 400, "Pass incorrect");
       }
