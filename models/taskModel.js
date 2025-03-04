@@ -1,4 +1,3 @@
-import types from "next/types";
 
 const mongoose = require("mongoose");
 

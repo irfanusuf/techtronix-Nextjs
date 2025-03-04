@@ -15,14 +15,13 @@ export default async function completed(req, res) {
     if (!findTask) {
       messagehandler(res, 404, "No Task Found");
     } else {
-      findTask.status = "complete";
+      findTask.status = "completed";
       await findTask.save();
 
       messagehandler(res, 200, "Task status Changed");
     }
   } catch (error) {
-    console.log(error);
-
+  
     return messagehandler(res, 500, "Server Error");
   }
 }

@@ -2,19 +2,17 @@
 
 import React, { useEffect, useState } from "react";
 import "./styles.css";
+import Link from "next/link";
 
 const Navbar = () => {
   const [loggedIn, setloggedIn] = useState(false);
 
 
   useEffect(()=>{
-
     var token = localStorage.getItem("authToken")
-
     if(token){
       setloggedIn(true)
     }
-
   }, [])
 
 
@@ -23,9 +21,8 @@ const Navbar = () => {
       <div className="logo"> Brand Name </div>
 
       <ul>
-        <li> {loggedIn && <a href="/user/task/getAll"> Tasks </a>} </li>
-
-       <li> {loggedIn ? <a href="/user/task/create"> create a Task</a> : <a href="/user/login"> Login</a>}  </li> 
+        <li> {loggedIn && <Link href="/user/task/getAll"> Tasks </Link>} </li>
+        <li> {loggedIn ? <Link href="/user/task/create"> create a Task</Link> : <Link href="/user/login"> Login</Link>}  </li> 
       </ul>
     </div>
   );

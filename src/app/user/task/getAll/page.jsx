@@ -78,40 +78,41 @@ const GetAll = () => {
   return (
     <div className="container">
 
-    {loading ? <div className="loading">   Loading ..... </div> :
 
       <div className="tasks">
         {tasks && tasks.length > 0 ? (
           tasks.map((task) => (
             <div key={task._id} className="task">
               <div className="heading">
-                <h1> {task.title} </h1>
+                <h1  className={task.status === "completed" ? "strike-through" : null} > {task.title} </h1>
+
+
+
                 <span className="pending">
                   {task.status === "pending" && <MdOutlinePendingActions />}
                   <span>
-                    {" "}
-                    {task.status === "pending" && "Task is pending"}{" "}
+                
+                    {task.status === "pending" && "Task is pending"}
                   </span>
                 </span>
 
                 <span className="progress">
                   {task.status === "inProgress" && <GrInProgress />}
                   <span>
-                    {" "}
-                    {task.status === "inProgress" && "Task is in Progress"}{" "}
+                    
+                    {task.status === "inProgress" && "Task is in Progress"}
                   </span>
                 </span>
 
                 <span className="completed">
-                  {task.status === "complete" && <MdCloudDone />}
+                  {task.status === "completed" && <MdCloudDone />}
                   <span>
-                    {" "}
-                    {task.status === "complete" && "Task completed"}{" "}
+                    {task.status === "completed" && "Task completed"}
                   </span>
                 </span>
               </div>
 
-              <h4> {task.description}</h4>
+              <h4 className={task.status === "completed" ? "strike-through" : null} > {task.description}</h4>
 
               {/* {task.status === "complete" ? <button>Edit</button> : <button>Edit</button>} */}
 
@@ -133,7 +134,7 @@ const GetAll = () => {
                
                   Task Completed{" "}
                 </button>
-              ) : task.status == "complete" ? (
+              ) : task.status == "completed" ? (
                 <button
                   onClick={() => {
                     handleDelete(task._id);
@@ -151,7 +152,7 @@ const GetAll = () => {
         )}
       </div>
 
-      }
+  
 
     </div>
   );
